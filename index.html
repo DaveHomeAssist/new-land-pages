@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Prompt Lab — Sharpen every prompt</title>
+<title>Prompt Lab — Sharpen every prompt | AI prompt improver</title>
 <meta name="description" content="Prompt Lab improves, expands, and compares your AI prompts in seconds. Sharpen every prompt." />
 <meta name="robots" content="index,follow" />
 <meta name="theme-color" content="#0F0F0D" />
 <link rel="canonical" href="https://promptlab.tools/" />
 <link rel="icon" type="image/png" href="https://promptlab.tools/hero-logo.png" />
-<meta property="og:title" content="Prompt Lab — Sharpen every prompt" />
+<meta property="og:title" content="Prompt Lab — Sharpen every prompt | AI prompt improver" />
 <meta property="og:description" content="Prompt Lab improves, expands, and compares your AI prompts in seconds. Sharpen every prompt." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://promptlab.tools/" />
 <meta property="og:image" content="https://promptlab.tools/og-image.png" />
 <meta property="og:site_name" content="Prompt Lab" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Prompt Lab — Sharpen every prompt" />
+<meta name="twitter:title" content="Prompt Lab — Sharpen every prompt | AI prompt improver" />
 <meta name="twitter:description" content="Prompt Lab improves, expands, and compares your AI prompts in seconds. Sharpen every prompt." />
 <meta name="twitter:image" content="https://promptlab.tools/og-image.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -163,6 +163,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .testimonial-avatar{width:32px;height:32px;border-radius:50%;background:var(--bg4);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:11px;color:var(--ink2);flex-shrink:0}
 .testimonial-name{font-size:12px;font-style:normal;font-weight:500;color:var(--ink)}
 .testimonial-role{font-size:11px;color:var(--ink3)}
+.cta-repeat{margin-top:32px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.cta-repeat-copy{max-width:420px;font-size:14px;color:var(--ink2);font-weight:300;line-height:1.65}
 
 /* PRICING */
 .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -223,18 +225,70 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible),textarea:focus:not(
   html{scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
 }
+/* HAMBURGER */
+.hamburger{display:none;background:none;border:none;color:var(--ink);cursor:pointer;padding:10px;margin-right:-10px;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+.hamburger svg{display:block}
+.mobile-menu{display:none;position:fixed;top:56px;left:0;right:0;bottom:0;background:rgba(15,15,13,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:40px 24px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:18px;color:var(--ink2);text-decoration:none;padding:12px 24px;min-height:44px;display:flex;align-items:center;transition:color .15s}
+.mobile-menu a:hover,.mobile-menu a:focus{color:var(--ink)}
+.mobile-menu .btn-hero{font-size:15px;margin-top:16px;padding:14px 28px}
+.mobile-menu .btn-ghost{font-size:15px;padding:12px 24px;min-height:44px;display:flex;align-items:center}
+
 /* RESPONSIVE */
 @media(max-width:768px){
   nav{padding:0 16px}
   .nav-links{display:none}
+  .hamburger{display:flex}
+  .nav-cta{display:none}
   .feature-grid,.pricing-grid,.testimonial-grid{grid-template-columns:1fr}
   .workflow-grid{grid-template-columns:1fr}
   .demo-body{grid-template-columns:1fr}
   .demo-col:first-child{border-right:none;border-bottom:1px solid var(--border)}
   .wrap{padding:64px 16px}
-  footer{padding:40px 16px 24px}
+  footer{padding:40px 16px 24px;flex-direction:column}
+  .footer-links{gap:32px}
   .footer-bottom{padding:16px;flex-direction:column;gap:8px}
-  .proof-strip{gap:28px;padding:16px}
+  .proof-strip{gap:24px;padding:16px}
+  .proof-item{min-width:calc(50% - 24px)}
+  .demo-tab{min-height:44px;padding:8px 14px;font-size:12px}
+  .demo-run-btn{min-height:44px;padding:10px 18px}
+  .demo-footer{flex-wrap:wrap;padding:10px 16px 14px}
+  .demo-footer-left{width:100%}
+  .pricing-cta{min-height:44px;display:flex;align-items:center;justify-content:center}
+  .ext-section{padding:56px 16px}
+  .hero{padding:100px 16px 56px}
+  .hero-sub{font-size:15px}
+  .sec-sub{font-size:15px}
+}
+@media(max-width:480px){
+  .hero{padding:80px 12px 40px;min-height:auto}
+  .hero-h1{font-size:clamp(32px,9vw,44px);margin-bottom:16px}
+  .hero-sub{font-size:14px;margin-bottom:28px}
+  .hero-badge{font-size:10px;padding:4px 10px;margin-bottom:20px}
+  .hero-actions{flex-direction:column;gap:10px;margin-bottom:40px}
+  .hero-actions .btn-hero,.hero-actions .btn-hero-ghost{width:100%;justify-content:center}
+  .demo-widget{border-radius:10px}
+  .demo-col{padding:12px}
+  .demo-input{min-height:80px;font-size:13px}
+  .demo-output-box{min-height:80px;font-size:13px}
+  .wrap{padding:48px 12px}
+  .sec-h2{font-size:clamp(26px,7vw,32px);margin-bottom:12px}
+  .sec-sub{font-size:14px;margin-bottom:36px}
+  .proof-strip{gap:16px;padding:14px 12px}
+  .proof-num{font-size:22px}
+  .proof-label{font-size:10px}
+  .feature-card{padding:24px 20px}
+  .testimonial-card{padding:20px}
+  .pricing-card{padding:24px 20px}
+  .workflow-step{gap:14px;padding:18px 0}
+  .workflow-visual{padding:18px;min-height:auto}
+  footer{padding:32px 12px 20px}
+  .footer-links{flex-direction:column;gap:24px}
+  .footer-bottom{padding:12px}
+  .ext-section{padding:40px 12px}
+  .ext-h2{font-size:clamp(24px,6vw,28px)}
+  .ext-sub{font-size:14px}
 }
 </style>
 </head>
@@ -257,10 +311,21 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible),textarea:focus:not(
     <li><a href="https://promptlab.tools/guide.html" class="nav-resource">Docs ↗</a></li>
   </ul>
   <div class="nav-cta">
-    <a href="https://promptlab.tools/app/#sign-in" class="btn-ghost">Sign in</a>
-    <a href="https://promptlab.tools/app/" class="btn-nav-cta">Open app &rarr;</a>
+    <a href="https://promptlab.tools/app/?utm_source=promptlab_tools&utm_medium=landing&utm_campaign=promptlab-home#sign-in" class="btn-ghost">Sign in</a>
+    <a href="https://promptlab.tools/app/?utm_source=promptlab_tools&utm_medium=landing&utm_campaign=promptlab-home" class="btn-nav-cta">Open app &rarr;</a>
   </div>
+  <button class="hamburger" aria-label="Open menu" aria-expanded="false" id="hamburgerBtn">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+  <a href="#features">Features</a>
+  <a href="#workflow">How it works</a>
+  <a href="#pricing">Pricing</a>
+  <a href="https://promptlab.tools/guide.html">Docs</a>
+  <a href="https://promptlab.tools/app/?utm_source=promptlab_tools&utm_medium=landing&utm_campaign=promptlab-home#sign-in" class="btn-ghost">Sign in</a>
+  <a href="https://promptlab.tools/app/?utm_source=promptlab_tools&utm_medium=landing&utm_campaign=promptlab-home" class="btn-hero">Open app &rarr;</a>
+</div>
 
 <main id="main-content">
 <section class="hero">
@@ -269,7 +334,7 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible),textarea:focus:not(
     <h1 class="hero-h1">Every prompt,<br><em>sharpened</em>.</h1>
     <p class="hero-sub">Prompt Lab improves, expands, and compares your AI prompts in seconds &mdash; so you spend less time wrestling with language and more time getting results.</p>
     <div class="hero-actions">
-      <a href="https://promptlab.tools/app/#sign-up" class="btn-hero">Try it free &rarr;</a>
+      <a href="https://promptlab.tools/app/?utm_source=promptlab_tools&utm_medium=landing&utm_campaign=promptlab-home#sign-up" class="btn-hero">Improve your first prompt &rarr;</a>
       <a href="#features" class="btn-hero-ghost">See how it works</a>
     </div>
 
@@ -306,8 +371,8 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible),textarea:focus:not(
 </section>
 
 <section class="proof-strip" aria-label="Social proof metrics">
-  <div class="proof-item"><span class="proof-num">Thousands</span><span class="proof-label">of prompts improved</span></div>
-  <div class="proof-item"><span class="proof-num">Multiple</span><span class="proof-label">AI modes</span></div>
+  <div class="proof-item"><span class="proof-num">4</span><span class="proof-label">AI improvement modes</span></div>
+  <div class="proof-item"><span class="proof-num">5</span><span class="proof-label">supported providers</span></div>
   <div class="proof-item"><span class="proof-num">&infin;</span><span class="proof-label">model support</span></div>
   <div class="proof-item"><span class="proof-num">Chrome</span><span class="proof-label">extension available</span></div>
 </section>
@@ -317,12 +382,12 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible),textarea:focus:not(
   <h2 class="sec-h2 reveal">Built for people who<br>take prompts <em>seriously</em>.</h2>
   <p class="sec-sub reveal">One workspace. Four modes. Every model.</p>
   <div class="feature-grid reveal">
-    <div class="feature-card"><div class="feature-icon">&#10024;</div><div class="feature-title">Improve</div><div class="feature-desc">Sharpens clarity, adds specificity, and restructures for better AI outputs without losing your intent.</div></div>
-    <div class="feature-card"><div class="feature-icon">&#129514;</div><div class="feature-title">A/B Compare</div><div class="feature-desc">Run the same prompt across two models side by side. See scores, diffs, and pick the winner instantly.</div></div>
-    <div class="feature-card"><div class="feature-icon">&#128208;</div><div class="feature-title">Diff view</div><div class="feature-desc">Word-level highlighting shows exactly what changed and why. Learn from every improvement.</div></div>
-    <div class="feature-card"><div class="feature-icon">&#128218;</div><div class="feature-title">Prompt library</div><div class="feature-desc">Save, tag, and search your best prompts. Load any saved prompt back into the workspace in one click.</div></div>
-    <div class="feature-card"><div class="feature-icon">&#9889;</div><div class="feature-title">DaveLLM Router</div><div class="feature-desc">A single provider interface across Claude, GPT-4o, Gemini, and local models &mdash; route everything from one place.</div></div>
-    <div class="feature-card"><div class="feature-icon">&#128305;</div><div class="feature-title">Chrome extension</div><div class="feature-desc">Improve prompts directly inside ChatGPT, Claude.ai, and Gemini without switching tabs.</div></div>
+    <div class="feature-card"><div class="feature-icon">&#10024;</div><div class="feature-title">Improve</div><div class="feature-desc">Sharpens clarity, adds specificity, and restructures for better AI outputs without losing your intent. Get noticeably better results from the same model in one click.</div></div>
+    <div class="feature-card"><div class="feature-icon">&#129514;</div><div class="feature-title">A/B Compare</div><div class="feature-desc">Run the same prompt across two models side by side. See scores, diffs, and pick the winner instantly. Stop guessing which model fits your use case.</div></div>
+    <div class="feature-card"><div class="feature-icon">&#128208;</div><div class="feature-title">Diff view</div><div class="feature-desc">Word-level highlighting shows exactly what changed and why. Build prompt intuition faster than reading ten blog posts about prompt engineering.</div></div>
+    <div class="feature-card"><div class="feature-icon">&#128218;</div><div class="feature-title">Prompt library</div><div class="feature-desc">Save, tag, and search your best prompts. Load any saved prompt back into the workspace in one click. Never rewrite a good prompt from scratch again.</div></div>
+    <div class="feature-card"><div class="feature-icon">&#9889;</div><div class="feature-title">DaveLLM Router</div><div class="feature-desc">A single provider interface across Claude, GPT-4o, Gemini, and local models &mdash; route everything from one place. Switch providers without changing your workflow.</div></div>
+    <div class="feature-card"><div class="feature-icon">&#128305;</div><div class="feature-title">Chrome extension</div><div class="feature-desc">Improve prompts directly inside ChatGPT, Claude.ai, and Gemini without switching tabs. Your prompt library travels with you.</div></div>
   </div>
 </section>
 
@@ -355,6 +420,10 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible),textarea:focus:not(
     <article class="testimonial-card"><blockquote class="testimonial-text">"I run every draft through Improve before I use it. Takes five seconds and the quality difference is immediately obvious."</blockquote><footer class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">JK</div><div><cite class="testimonial-name">James K.</cite><div class="testimonial-role">Freelance Developer</div></div></footer></article>
     <article class="testimonial-card"><blockquote class="testimonial-text">"The A/B compare mode changed how my team evaluates models. We run the same prompts across GPT-4o and Claude before choosing."</blockquote><footer class="testimonial-author"><div class="testimonial-avatar" aria-hidden="true">SL</div><div><cite class="testimonial-name">Sara L.</cite><div class="testimonial-role">ML Engineer</div></div></footer></article>
   </div>
+  <div class="cta-repeat reveal">
+    <p class="cta-repeat-copy">Ready to test Prompt Lab on a real draft? Start free and see the diff on your first prompt.</p>
+    <a href="https://promptlab.tools/app/?utm_source=promptlab_tools&utm_medium=landing&utm_campaign=promptlab-home#sign-up" class="btn-hero">Start for free &rarr;</a>
+  </div>
 </section>
 
 <section class="wrap" id="pricing">
@@ -372,7 +441,7 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible),textarea:focus:not(
         <li class="pricing-feature">Prompt library</li>
         <li class="pricing-feature">Chrome extension</li>
       </ul>
-      <a href="https://promptlab.tools/app/#sign-up" class="pricing-cta outlined">Start for free</a>
+      <a href="https://promptlab.tools/app/?utm_source=promptlab_tools&utm_medium=landing&utm_campaign=promptlab-home#sign-up" class="pricing-cta outlined">Start for free</a>
     </div>
     <div class="pricing-card featured">
       <div class="pricing-tier gold">Pro &mdash; coming soon</div>
@@ -421,7 +490,7 @@ a:focus:not(:focus-visible),button:focus:not(:focus-visible),textarea:focus:not(
     <p class="footer-tagline">Sharpen every prompt. Ship better AI.</p>
   </div>
   <div class="footer-links">
-    <div class="footer-col"><div class="footer-col-title">Product</div><ul><li><a href="https://promptlab.tools/app/">Open app</a></li><li><a href="#features">Features</a></li><li><a href="#pricing">Pricing</a></li><li><a href="https://promptlab.tools/setup.html">Setup</a></li></ul></div>
+    <div class="footer-col"><div class="footer-col-title">Product</div><ul><li><a href="https://promptlab.tools/app/?utm_source=promptlab_tools&utm_medium=landing&utm_campaign=promptlab-home">Open app</a></li><li><a href="#features">Features</a></li><li><a href="#pricing">Pricing</a></li><li><a href="https://promptlab.tools/setup.html">Setup</a></li></ul></div>
     <div class="footer-col"><div class="footer-col-title">Docs</div><ul><li><a href="https://promptlab.tools/guide.html">Getting started</a></li><li><a href="https://promptlab.tools/setup.html">Extension setup</a></li><li><a href="https://promptlab.tools/prompt-embed.html">Prompt Embed</a></li><li><a href="https://promptlab.tools/privacy.html">Privacy</a></li></ul></div>
     <div class="footer-col"><div class="footer-col-title">Company</div><ul><li><a href="https://github.com/DaveHomeAssist/prompt-lab">GitHub</a></li><li><a href="https://twitter.com/promptlabtools">Twitter</a></li><li><a href="mailto:hi@promptlab.tools">Contact</a></li></ul></div>
   </div>
@@ -457,6 +526,15 @@ const MODE_BTN_LABELS={
 const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 let currentMode="improve",isRunning=false,hasRunOnce=false;
 
+function trackLandingEvent(eventName,mode){
+  if(typeof window.gtag==="function"){
+    window.gtag("event",eventName,{event_category:"engagement",event_label:mode,mode});
+  }
+  if(typeof window.plausible==="function"){
+    window.plausible(eventName,{props:{mode}});
+  }
+}
+
 // ── Tab switching ─────────────────────────────────────────────
 document.querySelectorAll(".demo-tab").forEach(t=>{
   t.addEventListener("click",()=>{
@@ -468,6 +546,7 @@ document.querySelectorAll(".demo-tab").forEach(t=>{
     const btn=document.getElementById("demoRunBtn");
     btn.textContent=MODE_BTN_LABELS[currentMode];
     btn.setAttribute("aria-label","Run "+currentMode+" demo");
+    trackLandingEvent("promptlab_demo_mode_click",currentMode);
   });
 });
 
@@ -475,6 +554,7 @@ document.querySelectorAll(".demo-tab").forEach(t=>{
 document.getElementById("demoRunBtn").addEventListener("click",()=>{
   if(isRunning)return;
   isRunning=true;hasRunOnce=true;
+  trackLandingEvent("promptlab_demo_run_click",currentMode);
   const btn=document.getElementById("demoRunBtn"),out=document.getElementById("demoOutput");
   btn.disabled=true;btn.textContent="...";
   const text=DEMO_OUTPUTS[currentMode];
@@ -549,6 +629,32 @@ const revealObserver=new IntersectionObserver((entries)=>{
   });
 },{threshold:.12});
 revealEls.forEach(el=>revealObserver.observe(el));
+
+// ── Mobile hamburger menu ──────────────────────────────────────
+const hamburgerBtn=document.getElementById("hamburgerBtn");
+const mobileMenu=document.getElementById("mobileMenu");
+if(hamburgerBtn&&mobileMenu){
+  hamburgerBtn.addEventListener("click",()=>{
+    const isOpen=mobileMenu.classList.toggle("open");
+    hamburgerBtn.setAttribute("aria-expanded",isOpen);
+    document.body.style.overflow=isOpen?"hidden":"";
+    // Swap icon between hamburger and X
+    hamburgerBtn.innerHTML=isOpen
+      ?'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>'
+      :'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>';
+    hamburgerBtn.setAttribute("aria-label",isOpen?"Close menu":"Open menu");
+  });
+  // Close menu when a link is clicked
+  mobileMenu.querySelectorAll("a").forEach(a=>{
+    a.addEventListener("click",()=>{
+      mobileMenu.classList.remove("open");
+      hamburgerBtn.setAttribute("aria-expanded","false");
+      document.body.style.overflow="";
+      hamburgerBtn.innerHTML='<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>';
+      hamburgerBtn.setAttribute("aria-label","Open menu");
+    });
+  });
+}
 </script>
 </body>
 </html>
